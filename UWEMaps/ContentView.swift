@@ -9,15 +9,16 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
-    @Environment(\.managedObjectContext) private var viewContext
+    /*@Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default)
-    private var items: FetchedResults<Item>
+    private var items: FetchedResults<Item>*/
 
     var body: some View {
-        List {
+        LandmarkDetailView(informationText: "Located in the heart of Frenchay Campus, the Bristol Business School building was opened in 2017 and offers an innovative way of studying and working – with new social and learning spaces to allow students, staff and business people to work more closely together, and make valuable new connections.\n\nFrom our £55 million investment we have a 17,200m2 space serving 5,500 students and containing 148 offices over seven floors.")
+        /*List {
             ForEach(items) { item in
                 Text("Item at \(item.timestamp!, formatter: itemFormatter)")
             }
@@ -31,13 +32,13 @@ struct ContentView: View {
             Button(action: addItem) {
                 Label("Add Item", systemImage: "plus")
             }
-        }
+        }*/
     }
 
-    private func addItem() {
+    /*private func addItem() {
         withAnimation {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
+            //let newItem = Item(context: viewContext)
+            //newItem.timestamp = Date()
 
             do {
                 try viewContext.save()
@@ -48,9 +49,9 @@ struct ContentView: View {
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
         }
-    }
+    }*/
 
-    private func deleteItems(offsets: IndexSet) {
+    /*private func deleteItems(offsets: IndexSet) {
         withAnimation {
             offsets.map { items[$0] }.forEach(viewContext.delete)
 
@@ -63,7 +64,7 @@ struct ContentView: View {
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
         }
-    }
+    }*/
 }
 
 private let itemFormatter: DateFormatter = {
@@ -75,6 +76,6 @@ private let itemFormatter: DateFormatter = {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        ContentView()//.environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

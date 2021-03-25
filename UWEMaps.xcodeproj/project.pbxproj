@@ -15,6 +15,9 @@
 		E2AD2206260B42E100332AD5 /* UWEMaps.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E2AD2204260B42E100332AD5 /* UWEMaps.xcdatamodeld */; };
 		E2AD2211260B42E200332AD5 /* UWEMapsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AD2210260B42E200332AD5 /* UWEMapsTests.swift */; };
 		E2AD221C260B42E200332AD5 /* UWEMapsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AD221B260B42E200332AD5 /* UWEMapsUITests.swift */; };
+		E2AD222E260B464E00332AD5 /* LandmarkDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AD222D260B464E00332AD5 /* LandmarkDetailView.swift */; };
+		E2AD2236260B487300332AD5 /* ButtonViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AD2235260B487300332AD5 /* ButtonViews.swift */; };
+		E2AD223E260B4CF600332AD5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AD223D260B4CF600332AD5 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		E2AD2217260B42E200332AD5 /* UWEMapsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UWEMapsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2AD221B260B42E200332AD5 /* UWEMapsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UWEMapsUITests.swift; sourceTree = "<group>"; };
 		E2AD221D260B42E200332AD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2AD222D260B464E00332AD5 /* LandmarkDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkDetailView.swift; sourceTree = "<group>"; };
+		E2AD2235260B487300332AD5 /* ButtonViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViews.swift; sourceTree = "<group>"; };
+		E2AD223D260B4CF600332AD5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,8 @@
 		E2AD21F8260B42D900332AD5 /* UWEMaps */ = {
 			isa = PBXGroup;
 			children = (
+				E2AD223C260B4CE700332AD5 /* Models */,
+				E2AD222C260B463100332AD5 /* Views */,
 				E2AD21F9260B42D900332AD5 /* UWEMapsApp.swift */,
 				E2AD21FB260B42D900332AD5 /* ContentView.swift */,
 				E2AD21FD260B42E100332AD5 /* Assets.xcassets */,
@@ -134,6 +142,23 @@
 				E2AD221D260B42E200332AD5 /* Info.plist */,
 			);
 			path = UWEMapsUITests;
+			sourceTree = "<group>";
+		};
+		E2AD222C260B463100332AD5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E2AD222D260B464E00332AD5 /* LandmarkDetailView.swift */,
+				E2AD2235260B487300332AD5 /* ButtonViews.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E2AD223C260B4CE700332AD5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E2AD223D260B4CF600332AD5 /* Constants.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,7 +291,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2AD2203260B42E100332AD5 /* Persistence.swift in Sources */,
+				E2AD222E260B464E00332AD5 /* LandmarkDetailView.swift in Sources */,
+				E2AD2236260B487300332AD5 /* ButtonViews.swift in Sources */,
 				E2AD21FC260B42D900332AD5 /* ContentView.swift in Sources */,
+				E2AD223E260B4CF600332AD5 /* Constants.swift in Sources */,
 				E2AD2206260B42E100332AD5 /* UWEMaps.xcdatamodeld in Sources */,
 				E2AD21FA260B42D900332AD5 /* UWEMapsApp.swift in Sources */,
 			);
