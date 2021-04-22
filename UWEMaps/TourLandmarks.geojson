@@ -1,0 +1,164 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.550112,
+          51.50074
+        ]
+      },
+      "properties": {
+        "name": "Bristol Business School",
+        "description": "Located in the heart of Frenchay Campus, the Bristol Business School building was opened in 2017 and offers an innovative way of studying and working – with new social and learning spaces to allow students, staff and business people to work more closely together, and make valuable new connections.  From our £55 million investment we have a 17,200m2 space serving 5,500 students and containing 148 offices over seven floors.",
+        "imagekey": "BusinessSchool"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.550806,
+          51.500683
+        ]
+      },
+      "properties": {
+        "name": "Student's Union",
+        "description": "The two interlinked buildings facing the Heart Zone offer vibrant spaces to enhance the work of student reps, with volunteering activities, societies, sports and networks for students, all located in a multi-purpose engagement and social area. There’s also a bar, café, shop, terraces with outdoor seating, and bookable meeting areas.  The building was successfully completed in July 2015."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.548443,
+          51.498401
+        ]
+      },
+      "properties": {
+        "name": "S-Block"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.546946,
+          51.497609
+        ]
+      },
+      "properties": {
+        "name": "Centre for Music"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.547998,
+          51.498522
+        ]
+      },
+      "properties": {
+        "name": "B-Block"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.547884,
+          51.499363
+        ]
+      },
+      "properties": {
+        "name": "A/C Block Courtyard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.547564,
+          51.499967
+        ]
+      },
+      "properties": {
+        "name": "Information Point Courtyard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.548471,
+          51.500257
+        ]
+      },
+      "properties": {
+        "name": "Library/One Zone Entrance"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.54848,
+          51.500868
+        ]
+      },
+      "properties": {
+        "name": "Q Block"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.548751,
+          51.502681
+        ]
+      },
+      "properties": {
+        "name": "R Block"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.5472,
+          51.502906
+        ]
+      },
+      "properties": {
+        "name": "Acommodation"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.547462,
+          51.50385
+        ]
+      },
+      "properties": {
+        "name": "Centre for Sport"
+      }
+    }
+  ]
+}
