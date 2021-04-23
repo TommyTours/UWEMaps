@@ -6,7 +6,9 @@
       "properties": {
         "shape": "Marker",
         "name": "Business School",
-        "category": "default"
+        "category": "default",
+        "description": "Opened blah blah",
+        "imagekey": "BusinessSchool"
       },
       "geometry": {
         "type": "Point",

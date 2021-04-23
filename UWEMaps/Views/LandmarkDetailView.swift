@@ -62,6 +62,15 @@ private func loadData() -> [Landmark]
         let validLandmarks = features.compactMap(Landmark.init)
         let validRoutes =
             features.compactMap(Route.init)
+        let POOP = validRoutes[1].GetMeaningfulPoints()
+        let testRoute = validRoutes[4]
+        var testInstructions: [RouteInstruction] = []
+        let testCount = testRoute.Coordinates.coordinates.count
+        for i in 0...(testCount-3)
+        {
+            testInstructions.append(RouteInstruction(start: testRoute.Coordinates.coordinates[i], end: testRoute.Coordinates.coordinates[i+1], next: testRoute.Coordinates.coordinates[i+2]))
+        }
+        let testInstruct = RouteInstruction(start: validRoutes[1].Coordinates.coordinates[0], end: validRoutes[1].Coordinates.coordinates[1], next: validRoutes[1].Coordinates.coordinates[2])
         localLandmarkArr.append(contentsOf: validLandmarks)
     } catch {
         print("Unexpected error: \(error)")
@@ -82,7 +91,7 @@ private func loadData() -> [Landmark]
 //    } catch {
 //        print("Unexpected Error \(error)")
 //    }
-    return localLandmarkArr
+//    return localLandmarkArr
 }
 
 struct BottomButtonsView: View
