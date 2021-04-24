@@ -14,6 +14,8 @@ struct Route
     let Name: String?
     let Description: String?
     let Coordinates: MKPolyline
+    var Instructions: [RouteInstruction] = []
+    let TotalDistance: Double
     
     
     /// Takes a GeoJSON file containing route data and inits a Route instance with the line data converted to an MKPolyline
@@ -30,16 +32,27 @@ struct Route
         Name = properties["name"] as? String
         Description = properties["description"] as? String
         Coordinates = points
+        let pointCount = points.coordinates.count
+        for i in 0...(pointCount-3)
+        {
+            Instructions.append(RouteInstruction(start: points.coordinates[i], end: points.coordinates[i+1], next: points.coordinates[i+2]))
+        }
+        var runningDistance = 0.0
+        Instructions.forEach {
+            runningDistance += $0.Distance
+        }
+        TotalDistance = runningDistance.rounded()
     }
     
-    init(name: String, description: String, coordinates: [CLLocationCoordinate2D])
-    {
-        Name = name
-        Description = description
-        Coordinates = MKPolyline(coordinates: coordinates, count: coordinates.count)
-    }
+//    init(name: String, description: String, coordinates: [CLLocationCoordinate2D])
+//    {
+//        Name = name
+//        Description = description
+//        Coordinates = MKPolyline(coordinates: coordinates, count: coordinates.count)
+//    }
     
     /// Goes through the route and bundles any points that are close together (for example to create a curve on the map) into a single point for direction calculation.
+    /// Not really working atm
     func GetMeaningfulPoints() -> [CLLocationCoordinate2D]
     {
         var meaningfulPoints: [CLLocationCoordinate2D] = []

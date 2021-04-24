@@ -12,15 +12,16 @@ struct RouteInstruction
 {
     let StartPoint: CLLocationCoordinate2D
     let EndPoint: CLLocationCoordinate2D
-    let NextPoint: CLLocationCoordinate2D
+    let Distance: Double
     let InstructionText: String
+    let InstructionSymbol: String
     
     init(start: CLLocationCoordinate2D, end: CLLocationCoordinate2D, next: CLLocationCoordinate2D)
     {
         StartPoint = start
         EndPoint = end
-        NextPoint = next
         let distance = CLLocation(latitude: start.latitude, longitude: start.longitude).distance(from: CLLocation(latitude: end.latitude, longitude: end.longitude))
+        Distance = distance
         let firstBearing = LocationManager.calculateHeading(start: start, end: end)
         let secondBearing = LocationManager.calculateHeading(start: end, end: next)
         let firstCardinalDirection = LocationManager.GetRoughCardinalDirection(bearing: firstBearing)
@@ -29,17 +30,29 @@ struct RouteInstruction
         {
             let direction = RouteInstruction.leftOrRight(firstBearing: firstBearing, secondBearing: secondBearing)
             InstructionText = "Follow the path for \(distance.rounded()) metres then bear \(direction)."
-            
+            InstructionSymbol = "arrow.up.\(direction)"
         }
         else if RouteInstruction.isOppositeDirection(firstDirection: firstCardinalDirection, secondDirection: secondCardinalDirection)
         {
             InstructionText = "Turn around and follow the path for \(distance.rounded()) metres."
+            InstructionSymbol = "arrow.uturn.down"
         }
         else
         {
             let direction = RouteInstruction.leftOrRight(firstBearing: firstBearing, secondBearing: secondBearing)
-            InstructionText = "Follow the path for \(distance.rounded()), then turn \(direction)."
+            InstructionText = "Follow the path for \(distance.rounded()) metres, then turn \(direction)."
+            InstructionSymbol = "arrow.turn.up.\(direction)"
         }
+    }
+    
+    init(start: CLLocationCoordinate2D, destination: CLLocationCoordinate2D)
+    {
+        StartPoint = start
+        EndPoint = destination
+        let distance = CLLocation(latitude: start.latitude, longitude: start.longitude).distance(from: CLLocation(latitude: destination.latitude, longitude: destination.longitude))
+        Distance = distance
+        InstructionText = "Follow the path for \(distance.rounded()) metres and you will reach the destination"
+        InstructionSymbol = "arrow.up"
     }
     
     static func leftOrRight(firstBearing: Double, secondBearing: Double) -> String

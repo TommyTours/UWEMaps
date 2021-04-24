@@ -8,8 +8,9 @@
 import Foundation
 import CoreLocation
 
-class LocationManager
+class LocationManager: NSObject, ObservableObject
 {
+    @Published var atDestination = false
     static func calculateHeading(start: CLLocationCoordinate2D, end: CLLocationCoordinate2D) -> Double
     {
         let lat1 = start.latitude
@@ -20,7 +21,6 @@ class LocationManager
         let x = cos(lat1) * sin(lat2) - sin(lat1) * cos(lat2) * cos(lon2 - lon1)
         let calc = atan2(y, x)
         let bearing = (calc*180/Double.pi + 360).truncatingRemainder(dividingBy: 360)
-        print(bearing)
         return(bearing)
     }
     

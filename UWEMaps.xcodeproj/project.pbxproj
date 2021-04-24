@@ -8,10 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		E240C39526272EEF00125A96 /* TourLandmarks.geojson in Resources */ = {isa = PBXBuildFile; fileRef = E240C38726270A4300125A96 /* TourLandmarks.geojson */; };
+		E25AB0CF26344672009BDD8A /* MapNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25AB0CE26344672009BDD8A /* MapNavigationView.swift */; };
+		E25AB0D426347395009BDD8A /* MapViewUIRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25AB0D326347394009BDD8A /* MapViewUIRepresentable.swift */; };
+		E25AB0D9263486AC009BDD8A /* Tour.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25AB0D8263486AC009BDD8A /* Tour.swift */; };
 		E267C9422631BFB100520438 /* TourLandmarksV2.geojson in Resources */ = {isa = PBXBuildFile; fileRef = E267C9412631BF9700520438 /* TourLandmarksV2.geojson */; };
 		E267C9472631C1F500520438 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = E267C9462631C1F500520438 /* Route.swift */; };
 		E267C94C263305DE00520438 /* RouteInstruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E267C94B263305DE00520438 /* RouteInstruction.swift */; };
 		E267C951263308E700520438 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E267C950263308E700520438 /* LocationManager.swift */; };
+		E267C956263431AC00520438 /* InstructionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E267C955263431AC00520438 /* InstructionView.swift */; };
 		E2AD21FA260B42D900332AD5 /* UWEMapsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AD21F9260B42D900332AD5 /* UWEMapsApp.swift */; };
 		E2AD21FC260B42D900332AD5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AD21FB260B42D900332AD5 /* ContentView.swift */; };
 		E2AD21FE260B42E100332AD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2AD21FD260B42E100332AD5 /* Assets.xcassets */; };
@@ -45,10 +49,14 @@
 
 /* Begin PBXFileReference section */
 		E240C38726270A4300125A96 /* TourLandmarks.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = TourLandmarks.geojson; sourceTree = "<group>"; };
+		E25AB0CE26344672009BDD8A /* MapNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapNavigationView.swift; sourceTree = "<group>"; };
+		E25AB0D326347394009BDD8A /* MapViewUIRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewUIRepresentable.swift; sourceTree = "<group>"; };
+		E25AB0D8263486AC009BDD8A /* Tour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tour.swift; sourceTree = "<group>"; };
 		E267C9412631BF9700520438 /* TourLandmarksV2.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = TourLandmarksV2.geojson; sourceTree = "<group>"; };
 		E267C9462631C1F500520438 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		E267C94B263305DE00520438 /* RouteInstruction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteInstruction.swift; sourceTree = "<group>"; };
 		E267C950263308E700520438 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		E267C955263431AC00520438 /* InstructionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionView.swift; sourceTree = "<group>"; };
 		E2AD21F6260B42D900332AD5 /* UWEMaps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UWEMaps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2AD21F9260B42D900332AD5 /* UWEMapsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UWEMapsApp.swift; sourceTree = "<group>"; };
 		E2AD21FB260B42D900332AD5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -164,6 +172,9 @@
 			children = (
 				E2AD222D260B464E00332AD5 /* LandmarkDetailView.swift */,
 				E2AD2235260B487300332AD5 /* ButtonViews.swift */,
+				E267C955263431AC00520438 /* InstructionView.swift */,
+				E25AB0CE26344672009BDD8A /* MapNavigationView.swift */,
+				E25AB0D326347394009BDD8A /* MapViewUIRepresentable.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -175,6 +186,7 @@
 				E2AD7075261F39A8001BC043 /* Landmark.swift */,
 				E267C9462631C1F500520438 /* Route.swift */,
 				E267C94B263305DE00520438 /* RouteInstruction.swift */,
+				E25AB0D8263486AC009BDD8A /* Tour.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -310,14 +322,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E25AB0D426347395009BDD8A /* MapViewUIRepresentable.swift in Sources */,
 				E267C9472631C1F500520438 /* Route.swift in Sources */,
 				E2AD2203260B42E100332AD5 /* Persistence.swift in Sources */,
+				E25AB0D9263486AC009BDD8A /* Tour.swift in Sources */,
 				E2AD222E260B464E00332AD5 /* LandmarkDetailView.swift in Sources */,
 				E267C951263308E700520438 /* LocationManager.swift in Sources */,
 				E2AD2236260B487300332AD5 /* ButtonViews.swift in Sources */,
+				E267C956263431AC00520438 /* InstructionView.swift in Sources */,
 				E2AD7076261F39A8001BC043 /* Landmark.swift in Sources */,
 				E2AD21FC260B42D900332AD5 /* ContentView.swift in Sources */,
 				E267C94C263305DE00520438 /* RouteInstruction.swift in Sources */,
+				E25AB0CF26344672009BDD8A /* MapNavigationView.swift in Sources */,
 				E2AD223E260B4CF600332AD5 /* Constants.swift in Sources */,
 				E2AD2206260B42E100332AD5 /* UWEMaps.xcdatamodeld in Sources */,
 				E2AD21FA260B42D900332AD5 /* UWEMapsApp.swift in Sources */,

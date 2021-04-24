@@ -12,7 +12,7 @@ import MapKit
 struct LandmarkDetailView: View
 {
     //let landmark: Landmark
-    @State private var landmarks = loadData()
+    @State var landmark: Landmark
     
     var body: some View
     {
@@ -20,18 +20,18 @@ struct LandmarkDetailView: View
         {
             VStack
             {
-                Image(landmarks[0].ImageKey!)//landmark.ImageKey!)
+                Image(landmark.ImageKey!)
                     .resizable() 
                     .scaledToFit()
                     .edgesIgnoringSafeArea(.all)
                 ScrollView
                 {
-                    Text(landmarks[0].Name!)//landmark.Name ?? "Missing Name")
+                    Text(landmark.Name ?? "Missing Name")
                         .font(.largeTitle)
                         .bold()
                         .multilineTextAlignment(.center)
                         .padding(.bottom)
-                    Text(landmarks[0].Description!)//landmark.Description ?? "Missing Description")
+                    Text(landmark.Description ?? "Missing Description")
                         .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                         .multilineTextAlignment(.leading)
                         .padding(.horizontal)
@@ -45,37 +45,30 @@ struct LandmarkDetailView: View
     }
 }
 
-private func loadData() -> [Landmark]
-{
-    var localLandmarkArr = [Landmark]()
-    guard
-        let fileName = Bundle.main.url(forResource: "TourLandmarksV2", withExtension: "geojson"),
-        let landmarkData = try? Data(contentsOf: fileName)
-    else {
-        return []
-    }
-    
-    do {
-        let features = try MKGeoJSONDecoder()
-            .decode(landmarkData)
-            .compactMap { $0 as? MKGeoJSONFeature }
-        let validLandmarks = features.compactMap(Landmark.init)
-        let validRoutes =
-            features.compactMap(Route.init)
-        let POOP = validRoutes[1].GetMeaningfulPoints()
-        let testRoute = validRoutes[4]
-        var testInstructions: [RouteInstruction] = []
-        let testCount = testRoute.Coordinates.coordinates.count
-        for i in 0...(testCount-3)
-        {
-            testInstructions.append(RouteInstruction(start: testRoute.Coordinates.coordinates[i], end: testRoute.Coordinates.coordinates[i+1], next: testRoute.Coordinates.coordinates[i+2]))
-        }
-        let testInstruct = RouteInstruction(start: validRoutes[1].Coordinates.coordinates[0], end: validRoutes[1].Coordinates.coordinates[1], next: validRoutes[1].Coordinates.coordinates[2])
-        localLandmarkArr.append(contentsOf: validLandmarks)
-    } catch {
-        print("Unexpected error: \(error)")
-    }
-    return localLandmarkArr
+//private func loadData() -> [Landmark]
+//{
+//    var localLandmarkArr = [Landmark]()
+//    guard
+//        let fileName = Bundle.main.url(forResource: "TourLandmarksV2", withExtension: "geojson"),
+//        let landmarkData = try? Data(contentsOf: fileName)
+//    else {
+//        return []
+//    }
+//
+//    do {
+//        let features = try MKGeoJSONDecoder()
+//            .decode(landmarkData)
+//            .compactMap { $0 as? MKGeoJSONFeature }
+//        let validLandmarks = features.compactMap(Landmark.init)
+//        let validRoutes =
+//            features.compactMap(Route.init)
+//        //let POOP = validRoutes[1].GetMeaningfulPoints()
+//        let testRoute = validRoutes[4]
+//        localLandmarkArr.append(contentsOf: validLandmarks)
+//    } catch {
+//        print("Unexpected error: \(error)")
+//    }
+//    return localLandmarkArr
 //    let fileName = Bundle.main.url(forResource: "Resources/TourLandmarks", withExtension: "geojson")
 //    let subDir = Bundle.main.resourceURL!.path//.appendingPathComponent("Resources").path
 //    let subDirURL = URL(fileURLWithPath: subDir)
@@ -92,7 +85,7 @@ private func loadData() -> [Landmark]
 //        print("Unexpected Error \(error)")
 //    }
 //    return localLandmarkArr
-}
+//}
 
 struct BottomButtonsView: View
 {
@@ -101,7 +94,9 @@ struct BottomButtonsView: View
         
         HStack
         {
+            Link(destination: URL(string: "https://www.hackingwithswift.com/")!) {
             BigGreenButton(buttonText: "More information", buttonWidth: Constants.General.landmarkButtonWidth, buttonHeight: Constants.General.landmarkButtonHeight)
+            }
             Spacer()
             BigGreenButton(buttonText: "Continue Tour", buttonWidth: Constants.General.landmarkButtonWidth, buttonHeight: Constants.General.landmarkButtonHeight)
         }
@@ -116,7 +111,7 @@ struct LandmarkDetailView_Previews: PreviewProvider
         let xBlockLocation = CLLocation(latitude: 51.500757, longitude: -2.54974)
         let xBlock = Landmark(name: "Bristol Business School", description: "Located in the heart of Frenchay Campus, the Bristol Business School building was opened in 2017 and offers an innovative way of studying and working – with new social and learning spaces to allow students, staff and business people to work more closely together, and make valuable new connections.\n\nFrom our £55 million investment we have a 17,200m2 space serving 5,500 students and containing 148 offices over seven floors.", coordinate: xBlockLocation.coordinate, imageKey: "BusinessSchool")
         
-        LandmarkDetailView()//landmark: xBlock)
+        LandmarkDetailView(landmark: xBlock)
         BottomButtonsView()
     }
 }
