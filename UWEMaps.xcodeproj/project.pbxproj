@@ -75,6 +75,8 @@
 		E2AD2235260B487300332AD5 /* ButtonViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViews.swift; sourceTree = "<group>"; };
 		E2AD223D260B4CF600332AD5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E2AD7075261F39A8001BC043 /* Landmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Landmark.swift; sourceTree = "<group>"; };
+		E2E6A0402635CEB800D22BCA /* ParkingMachineToBusinessSchool.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ParkingMachineToBusinessSchool.gpx; sourceTree = "<group>"; };
+		E2E6A04426371F6400D22BCA /* xblocktoSU.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = xblocktoSU.gpx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,7 +138,9 @@
 				E2AD2204260B42E100332AD5 /* UWEMaps.xcdatamodeld */,
 				E2AD21FF260B42E100332AD5 /* Preview Content */,
 				E267C9412631BF9700520438 /* TourLandmarksV2.geojson */,
+				E2E6A0402635CEB800D22BCA /* ParkingMachineToBusinessSchool.gpx */,
 				E267C950263308E700520438 /* LocationManager.swift */,
+				E2E6A04426371F6400D22BCA /* xblocktoSU.gpx */,
 			);
 			path = UWEMaps;
 			sourceTree = "<group>";

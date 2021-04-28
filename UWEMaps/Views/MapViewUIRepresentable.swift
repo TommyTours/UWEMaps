@@ -15,6 +15,12 @@ struct MapViewUIRepresentable: UIViewRepresentable
     
     func makeUIView(context: Context) -> some MKMapView
     {
+        mapViewInstance.isRotateEnabled = false
+        mapViewInstance.delegate = context.coordinator
+        mapViewInstance.showsUserLocation = true
+        mapViewInstance.cameraZoomRange = MKMapView.CameraZoomRange(
+            maxCenterCoordinateDistance: 2000)
+        mapViewInstance.userTrackingMode = .followWithHeading
         return mapViewInstance
     }
     
@@ -23,7 +29,32 @@ struct MapViewUIRepresentable: UIViewRepresentable
     }
     
     func updateUIView(_ uiView: UIViewType, context: Context) {
-        
+        mapViewInstance.setUserTrackingMode(.followWithHeading, animated: true)
+    }
+    
+    func resetUserTracking()
+    {
+        print("\(mapViewInstance.cameraZoomRange.debugDescription)")
+        mapViewInstance.setUserTrackingMode(.followWithHeading, animated: true)
+    }
+    
+    func drawRouteOnMap(route: Route)
+    {
+        if mapViewInstance.overlays.count > 0
+        {
+            for overlay in mapViewInstance.overlays
+            {
+                mapViewInstance.removeOverlay(overlay)
+            }
+        }
+        mapViewInstance.addOverlay(route.Coordinates)
+    }
+    
+    func centreAndZoomOnPoint(_ point: CLLocationCoordinate2D)
+    {
+        let span = MKCoordinateSpan(latitudeDelta: 0.001, longitudeDelta: 0.001)
+        let region = MKCoordinateRegion(center: point, span: span)
+        mapViewInstance.setRegion(region, animated: true)
     }
     
     class Coordinator: NSObject, MKMapViewDelegate
@@ -39,7 +70,8 @@ struct MapViewUIRepresentable: UIViewRepresentable
             if overlay is MKPolyline
             {
                 let lineView = MKPolylineRenderer(overlay: overlay)
-                lineView.strokeColor = .blue
+                lineView.strokeColor = UIColor(Color("RouteLineColour"))
+                lineView.lineWidth = 8.0
                 return lineView
             }
             return MKOverlayRenderer(overlay: overlay)

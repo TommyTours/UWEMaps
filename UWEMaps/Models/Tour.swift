@@ -18,6 +18,9 @@ struct Tour
     var CurrentRoute: Route
     var CurrentInstruction: RouteInstruction
     var CurrentDestination: Landmark
+    var DistanceToDest: Double
+    var ArrivalTime: Date
+    var TimeToDest: Int
     
     init()
     {
@@ -26,22 +29,53 @@ struct Tour
         DestinationCount = AllDestinations.count
         CurrentRoute = AllRoutes.first!
         CurrentInstruction = CurrentRoute.Instructions.first!
-        CurrentDestination = AllDestinations.first!
+        CurrentDestination = AllDestinations[1]
+        DistanceToDest = CurrentRoute.TotalDistance
+        var date = Date()
+        let secondsToDest = DistanceToDest * 1.4
+        date.addTimeInterval(TimeInterval(secondsToDest))
+        ArrivalTime = date
+        TimeToDest = Int((secondsToDest).rounded())
     }
     
     mutating func nextRoute()
     {
+        print("Next Route")
         CurrentRouteNumber += 1
         CurrentInstructionNumber = 0
         CurrentRoute = AllRoutes[CurrentRouteNumber]
-        CurrentDestination = AllDestinations[CurrentRouteNumber]
+        CurrentDestination = AllDestinations[CurrentRouteNumber+1]
         CurrentInstruction = CurrentRoute.Instructions.first!
+        DistanceToDest  = CurrentRoute.TotalDistance
+        var date = Date()
+        let secondsToDest = DistanceToDest * 1.4
+        date.addTimeInterval(TimeInterval(secondsToDest))
+        ArrivalTime = date
+        TimeToDest = Int((secondsToDest).rounded())
+        print("Time to dest: \(String(TimeToDest))")
     }
     
     mutating func nextInstruction()
     {
+        print("Next Instruction")
         CurrentInstructionNumber += 1
-        CurrentInstruction = CurrentRoute.Instructions[CurrentInstructionNumber]
+        if CurrentInstructionNumber < CurrentRoute.Instructions.count
+        {
+            DistanceToDest -= CurrentInstruction.Distance
+            var date = Date()
+            let secondsToDest = DistanceToDest * 1.4
+            date.addTimeInterval(TimeInterval(secondsToDest))
+            ArrivalTime = date
+            TimeToDest = Int((secondsToDest).rounded())
+
+            CurrentInstruction = CurrentRoute.Instructions[CurrentInstructionNumber]
+        }
+        print(CurrentInstruction.InstructionText)
+        if CurrentRoute.CoordinateArray.count > 0
+        {
+            CurrentRoute.CoordinateArray.remove(at: 0)
+        }
+        CurrentRoute.Coordinates = MKPolyline(coordinates: CurrentRoute.CoordinateArray, count: CurrentRoute.CoordinateArray.count)
     }
     
     private static func loadLandmarkData() -> [Landmark]

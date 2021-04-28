@@ -20,7 +20,7 @@ struct LandmarkDetailView: View
         {
             VStack
             {
-                Image(landmark.ImageKey!)
+                Image(landmark.ImageKey ?? "missingImage")
                     .resizable() 
                     .scaledToFit()
                     .edgesIgnoringSafeArea(.all)

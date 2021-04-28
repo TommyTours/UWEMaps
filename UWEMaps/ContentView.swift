@@ -21,8 +21,6 @@ struct ContentView: View {
     var body: some View {
         TabView {
             MapNavigationView(CurrentTour: $tourData)
-            //DistanceToDestBar()
-            //Text("sdfasdf")
                 .tabItem {
                     Image(systemName: "map")
                     Text("Tour")
@@ -35,11 +33,6 @@ struct ContentView: View {
         }.onAppear {
             tourData = Tour()
         }
-            
-            //        let xBlockLocation = CLLocation(latitude: 51.500757, longitude: -2.54974)
-            //        let xBlock = Landmark(name: "Bristol Business School", description: "Located in the heart of Frenchay Campus, the Bristol Business School building was opened in 2017 and offers an innovative way of studying and working – with new social and learning spaces to allow students, staff and business people to work more closely together, and make valuable new connections.\n\nFrom our £55 million investment we have a 17,200m2 space serving 5,500 students and containing 148 offices over seven floors.", coordinate: xBlockLocation.coordinate, imageKey: "BusinessSchool")
-            //
-            //        LandmarkDetailView(landmark: xBlock)
             /*List {
              ForEach(items) { item in
              Text("Item at \(item.timestamp!, formatter: itemFormatter)")
@@ -88,12 +81,12 @@ struct ContentView: View {
              }*/
         
     }
-    private let itemFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .short
-        formatter.timeStyle = .medium
-        return formatter
-    }()
+//    private let itemFormatter: DateFormatter = {
+//        let formatter = DateFormatter()
+//        formatter.dateStyle = .short
+//        formatter.timeStyle = .medium
+//        return formatter
+//    }()
     
     struct ContentView_Previews: PreviewProvider {
         static var previews: some View {

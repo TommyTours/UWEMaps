@@ -11,6 +11,18 @@ import CoreLocation
 class LocationManager: NSObject, ObservableObject
 {
     @Published var atDestination = false
+    @Published var atInstruction = 0
+    var locationManagerInstance = CLLocationManager()
+    var currentDestination: CLLocation?
+    var currentInstruction: CLLocation?
+    
+    override init()
+    {
+        super.init()
+        locationManagerInstance.delegate = self
+        locationManagerInstance.desiredAccuracy = kCLLocationAccuracyBest
+    }
+    
     static func calculateHeading(start: CLLocationCoordinate2D, end: CLLocationCoordinate2D) -> Double
     {
         let lat1 = start.latitude
@@ -42,6 +54,55 @@ class LocationManager: NSObject, ObservableObject
         else
         {
             return Route.CompassDirections.West
+        }
+    }
+    
+    func startLocationServices()
+    {
+        if locationManagerInstance.authorizationStatus == .authorizedAlways || locationManagerInstance.authorizationStatus == .authorizedWhenInUse
+        {
+            locationManagerInstance.startUpdatingLocation()
+        }
+        else
+        {
+            locationManagerInstance.requestWhenInUseAuthorization()
+        }
+    }
+    
+    func setDestination(destination: Landmark)
+    {
+        currentDestination = CLLocation(latitude: destination.Coordinate.latitude, longitude: destination.Coordinate.longitude)
+    }
+    
+    func setInstruction(destination: CLLocation)
+    {
+        currentInstruction = destination
+    }
+}
+
+extension LocationManager: CLLocationManagerDelegate
+{
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        if locationManagerInstance.authorizationStatus == .authorizedAlways || locationManagerInstance.authorizationStatus == .authorizedWhenInUse
+        {
+            locationManagerInstance.startUpdatingLocation()
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let lastestLoc = locations.first else { return }
+        guard let destination = currentDestination else { return }
+        guard let instruction = currentInstruction else { return }
+        let distanceFromDest = lastestLoc.distance(from: destination)
+        let distanceFromInstruction = lastestLoc.distance(from: instruction)
+        if distanceFromDest <= 3
+        {
+            atDestination = true
+            return
+        }
+        else if distanceFromInstruction <= 2
+        {
+            atInstruction += 1
         }
     }
 }

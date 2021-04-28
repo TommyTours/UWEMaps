@@ -13,8 +13,9 @@ struct Route
 {
     let Name: String?
     let Description: String?
-    let Coordinates: MKPolyline
+    var Coordinates: MKPolyline
     var Instructions: [RouteInstruction] = []
+    var CoordinateArray: [CLLocationCoordinate2D]
     let TotalDistance: Double
     
     
@@ -32,16 +33,28 @@ struct Route
         Name = properties["name"] as? String
         Description = properties["description"] as? String
         Coordinates = points
+        var coordinateArr: [CLLocationCoordinate2D] = []
         let pointCount = points.coordinates.count
-        for i in 0...(pointCount-3)
+        for i in 0...(pointCount-1)
         {
-            Instructions.append(RouteInstruction(start: points.coordinates[i], end: points.coordinates[i+1], next: points.coordinates[i+2]))
+            // If there are at least three points left, this means that there is another step after this and the three argument init for the instruction is called
+            if i <= (pointCount - 3)
+            {
+                Instructions.append(RouteInstruction(start: points.coordinates[i], end: points.coordinates[i+1], next: points.coordinates[i+2]))
+            }
+            // Else if there are 2 points remaining this is the final step and the 2 argument init is called to create a "you will reach the destination message"
+            else if i <= (pointCount - 2)
+            {
+                Instructions.append(RouteInstruction(start: points.coordinates[i], destination: points.coordinates[i+1]))
+            }
+            coordinateArr.append(CLLocationCoordinate2D(latitude: points.coordinates[i].latitude, longitude: points.coordinates[i].longitude))
         }
         var runningDistance = 0.0
         Instructions.forEach {
             runningDistance += $0.Distance
         }
         TotalDistance = runningDistance.rounded()
+        CoordinateArray = coordinateArr
     }
     
 //    init(name: String, description: String, coordinates: [CLLocationCoordinate2D])

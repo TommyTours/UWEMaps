@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="gpxgenerator.com">
+<wpt lat="51.501897" lon="-2.549778">
+    <ele>75.00</ele>
+    <time>2021-04-25T18:19:22Z</time>
+</wpt>
+<wpt lat="51.501584" lon="-2.549863">
+    <ele>75.59</ele>
+    <time>2021-04-25T18:19:50Z</time>
+</wpt>
+<wpt lat="51.500622" lon="-2.549574">
+    <ele>75.60</ele>
+    <time>2021-04-25T18:20:35Z</time>
+</wpt>
+<wpt lat="51.500538" lon="-2.550325">
+    <ele>75.05</ele>
+    <time>2021-04-25T18:21:01Z</time>
+</wpt>
+<wpt lat="51.500712" lon="-2.550384">
+    <ele>74.77</ele>
+    <time>2021-04-25T18:21:14Z</time>
+</wpt>
+</gpx>

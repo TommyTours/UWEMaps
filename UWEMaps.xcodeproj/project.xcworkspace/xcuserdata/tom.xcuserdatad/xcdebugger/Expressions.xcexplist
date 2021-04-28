@@ -3,6 +3,17 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "loadData():LandmarkDetailView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "testRoute.Coordinates.coordinates">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Landmark.init(feature:):Landmark.swift">
+      </ContextState>
+      <ContextState
          contextName = "Route.init(feature:):Route.swift">
          <PersistentStrings>
             <PersistentString
@@ -11,21 +22,21 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "Landmark.init(feature:):Landmark.swift">
-      </ContextState>
-      <ContextState
          contextName = "RouteInstruction.init(start:end:next:):RouteInstruction.swift">
       </ContextState>
       <ContextState
-         contextName = "Route.GetMeaningfulPoints():Route.swift">
+         contextName = "MapViewUIRepresentable.drawRouteOnMap(route:):MapViewUIRepresentable.swift">
       </ContextState>
       <ContextState
-         contextName = "loadData():LandmarkDetailView.swift">
+         contextName = "MapViewUIRepresentable.resetUserTracking():MapViewUIRepresentable.swift">
          <PersistentStrings>
             <PersistentString
-               value = "testRoute.Coordinates.coordinates">
+               value = "mapViewInstance.cameraZoomRange">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Route.GetMeaningfulPoints():Route.swift">
       </ContextState>
    </ContextStates>
 </VariablesViewState>

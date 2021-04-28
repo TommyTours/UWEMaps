@@ -18,15 +18,17 @@ struct InstructionView: View {
         {
             RoundedRectangle(cornerRadius: 25.0)
                 .frame(height: height * 0.15)
-                .foregroundColor(.white)
+                .foregroundColor(Color("NavViewInstructionBackgroundColour"))
                 .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/, x: 5, y: 5)
             HStack
             {
                 Image(systemName: instruction.InstructionSymbol)
                     .resizable()
+                    .foregroundColor(Color("NavViewInstructionTextColour"))
                     .frame(width: height * 0.11, height: height * 0.11)
                 Spacer()
                 Text(instruction.InstructionText)
+                    .foregroundColor(Color("NavViewInstructionTextColour"))
             }.padding(.horizontal)
         }.padding(.horizontal)
         
