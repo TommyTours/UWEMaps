@@ -25,7 +25,7 @@ struct ContentView: View {
                     Image(systemName: "map")
                     Text("Tour")
                 }//
-            Text("Browse Landmarks Goes Here")
+            LandmarkListView(data: tourData.AllDestinations)
                 .tabItem {
                     Image(systemName: "building")
                     Text("Landmarks")

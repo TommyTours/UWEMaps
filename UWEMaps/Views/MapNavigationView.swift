@@ -72,7 +72,7 @@ struct MapNavigationView: View {
                 locationManager.setDestination(destination: CurrentTour.CurrentDestination)
 
             } ) {
-                LandmarkDetailView(landmark: CurrentTour.CurrentDestination)
+                LandmarkDetailView(landmark: CurrentTour.CurrentDestination, currentlyOnTour: true)
             }
         }
     }

@@ -13,94 +13,72 @@ struct LandmarkDetailView: View
 {
     //let landmark: Landmark
     @State var landmark: Landmark
+    let currentlyOnTour: Bool
     
     var body: some View
     {
+        GeometryReader { geometry in
         ZStack
         {
+                        VStack
+                        {
+                            Image(landmark.ImageKey ?? "missingImage")
+                                .resizable()
+                                .scaledToFit()
+                                .edgesIgnoringSafeArea(.all)
+                            ScrollView
+                            {
+                                Text(landmark.Name ?? "Missing Name")
+                                    .font(.largeTitle)
+                                    .bold()
+                                    .multilineTextAlignment(.center)
+                                    .padding(.bottom)
+                                Text(landmark.Description ?? "Missing Description")
+                                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                                    .multilineTextAlignment(.leading)
+                                    .padding(.horizontal)
+                                    .padding(.bottom, 120)
+                            }
+                            .padding(.horizontal)
+                            Spacer()
+                        }
             VStack
             {
-                Image(landmark.ImageKey ?? "missingImage")
-                    .resizable() 
-                    .scaledToFit()
-                    .edgesIgnoringSafeArea(.all)
-                ScrollView
-                {
-                    Text(landmark.Name ?? "Missing Name")
-                        .font(.largeTitle)
-                        .bold()
-                        .multilineTextAlignment(.center)
-                        .padding(.bottom)
-                    Text(landmark.Description ?? "Missing Description")
-                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                        .multilineTextAlignment(.leading)
-                        .padding(.horizontal)
-                        .padding(.bottom, 120)
-                }
                 Spacer()
+                BottomButtonsView(currentlyOnTour: currentlyOnTour, height: geometry.size.height)
+                    .padding()
             }
-            BottomButtonsView()
-                .padding(.top, 750)
-        }//.onAppear(perform: loadData)
+        }
+        }
     }
 }
 
-//private func loadData() -> [Landmark]
-//{
-//    var localLandmarkArr = [Landmark]()
-//    guard
-//        let fileName = Bundle.main.url(forResource: "TourLandmarksV2", withExtension: "geojson"),
-//        let landmarkData = try? Data(contentsOf: fileName)
-//    else {
-//        return []
-//    }
-//
-//    do {
-//        let features = try MKGeoJSONDecoder()
-//            .decode(landmarkData)
-//            .compactMap { $0 as? MKGeoJSONFeature }
-//        let validLandmarks = features.compactMap(Landmark.init)
-//        let validRoutes =
-//            features.compactMap(Route.init)
-//        //let POOP = validRoutes[1].GetMeaningfulPoints()
-//        let testRoute = validRoutes[4]
-//        localLandmarkArr.append(contentsOf: validLandmarks)
-//    } catch {
-//        print("Unexpected error: \(error)")
-//    }
-//    return localLandmarkArr
-//    let fileName = Bundle.main.url(forResource: "Resources/TourLandmarks", withExtension: "geojson")
-//    let subDir = Bundle.main.resourceURL!.path//.appendingPathComponent("Resources").path
-//    let subDirURL = URL(fileURLWithPath: subDir)
-//    let GEOJSONURL = URL(fileURLWithPath: "TourLandmarks", relativeTo: subDirURL).appendingPathExtension("geojson")
-//    guard let landmarkData = try? Data(contentsOf: GEOJSONURL) else { return [] }
-//
-//    do {
-//        let features = try MKGeoJSONDecoder()
-//            .decode(landmarkData)
-//            .compactMap { $0 as? MKGeoJSONFeature }
-//        let validLandmarks = features.compactMap(Landmark.init)
-//        localLandmarkArr.append(contentsOf: validLandmarks)
-//    } catch {
-//        print("Unexpected Error \(error)")
-//    }
-//    return localLandmarkArr
-//}
-
 struct BottomButtonsView: View
 {
+    let currentlyOnTour: Bool
+    let height: CGFloat
     var body: some View
     {
         
-        HStack
-        {
-            Link(destination: URL(string: "https://www.hackingwithswift.com/")!) {
-            BigGreenButton(buttonText: "More information", buttonWidth: Constants.General.landmarkButtonWidth, buttonHeight: Constants.General.landmarkButtonHeight)
+            if currentlyOnTour
+            {
+                HStack
+                {
+                    Link(destination: URL(string: "https://www.hackingwithswift.com/")!) {
+                        BigGreenButton(buttonText: "More information", buttonHeight: height * 0.15)
+                    }
+                    Spacer()
+                    BigGreenButton(buttonText: "Continue Tour",  buttonHeight: height * 0.15)
+                }
             }
-            Spacer()
-            BigGreenButton(buttonText: "Continue Tour", buttonWidth: Constants.General.landmarkButtonWidth, buttonHeight: Constants.General.landmarkButtonHeight)
-        }
-        .padding()
+            else
+            {
+                Link(destination: URL(string: "https://www.hackingwithswift.com/")!) {
+                    BigGreenButton(buttonText: "More information",  buttonHeight: height * 0.15)
+                }
+                
+            }
+        
     }
 }
 
@@ -110,8 +88,9 @@ struct LandmarkDetailView_Previews: PreviewProvider
     {
         let xBlockLocation = CLLocation(latitude: 51.500757, longitude: -2.54974)
         let xBlock = Landmark(name: "Bristol Business School", description: "Located in the heart of Frenchay Campus, the Bristol Business School building was opened in 2017 and offers an innovative way of studying and working – with new social and learning spaces to allow students, staff and business people to work more closely together, and make valuable new connections.\n\nFrom our £55 million investment we have a 17,200m2 space serving 5,500 students and containing 148 offices over seven floors.", coordinate: xBlockLocation.coordinate, imageKey: "BusinessSchool")
-        
-        LandmarkDetailView(landmark: xBlock)
-        BottomButtonsView()
+        GeometryReader { geometry in
+        LandmarkDetailView(landmark: xBlock, currentlyOnTour: true)
+            //BottomButtonsView(currentlyOnTour: false, height: geometry.size.height, width: geometry.size.width)
+        }
     }
 }

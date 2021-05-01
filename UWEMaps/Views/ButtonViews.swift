@@ -10,20 +10,24 @@ import SwiftUI
 struct BigGreenButton: View
 {
     let buttonText: String
-    let buttonWidth: CGFloat
     let buttonHeight: CGFloat
     
     var body: some View
     {
-        Text(buttonText)
-            .foregroundColor(Color("whiteTextColour"))
-            .bold()
-            .padding()
-            .frame(width: buttonWidth, height: buttonHeight)
-            .background(
-                RoundedRectangle(cornerRadius: Constants.General.ButtonCornerRadius)
-                            .foregroundColor(Color("uweGreen"))
-            )
+        HStack
+        {
+            Spacer()
+            Text(buttonText)
+                .foregroundColor(Color("whiteTextColour"))
+                .bold()
+                .frame(height: buttonHeight)
+            Spacer()
+        }
+        .background(
+            RoundedRectangle(cornerRadius: Constants.General.ButtonCornerRadius)
+                .foregroundColor(Color("uweGreen"))
+                .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/, x: 5, y: 5)
+        )
     }
 }
 
@@ -33,7 +37,7 @@ struct ButtonViews_Previews: PreviewProvider
     {
         VStack
         {
-            BigGreenButton(buttonText: "Test Button Text", buttonWidth: Constants.General.landmarkButtonWidth, buttonHeight: Constants.General.landmarkButtonHeight)
+            BigGreenButton(buttonText: "Test Button Text", buttonHeight: Constants.General.landmarkButtonHeight)
         }
     }
 }

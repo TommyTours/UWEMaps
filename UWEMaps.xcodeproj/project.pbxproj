@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E240C39526272EEF00125A96 /* TourLandmarks.geojson in Resources */ = {isa = PBXBuildFile; fileRef = E240C38726270A4300125A96 /* TourLandmarks.geojson */; };
+		E24B1260263DA7D9002FF0C5 /* LandmarkListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24B125F263DA7D9002FF0C5 /* LandmarkListView.swift */; };
 		E25AB0CF26344672009BDD8A /* MapNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25AB0CE26344672009BDD8A /* MapNavigationView.swift */; };
 		E25AB0D426347395009BDD8A /* MapViewUIRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25AB0D326347394009BDD8A /* MapViewUIRepresentable.swift */; };
 		E25AB0D9263486AC009BDD8A /* Tour.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25AB0D8263486AC009BDD8A /* Tour.swift */; };
@@ -49,6 +50,7 @@
 
 /* Begin PBXFileReference section */
 		E240C38726270A4300125A96 /* TourLandmarks.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = TourLandmarks.geojson; sourceTree = "<group>"; };
+		E24B125F263DA7D9002FF0C5 /* LandmarkListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkListView.swift; sourceTree = "<group>"; };
 		E25AB0CE26344672009BDD8A /* MapNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapNavigationView.swift; sourceTree = "<group>"; };
 		E25AB0D326347394009BDD8A /* MapViewUIRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewUIRepresentable.swift; sourceTree = "<group>"; };
 		E25AB0D8263486AC009BDD8A /* Tour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tour.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				E267C955263431AC00520438 /* InstructionView.swift */,
 				E25AB0CE26344672009BDD8A /* MapNavigationView.swift */,
 				E25AB0D326347394009BDD8A /* MapViewUIRepresentable.swift */,
+				E24B125F263DA7D9002FF0C5 /* LandmarkListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 			files = (
 				E25AB0D426347395009BDD8A /* MapViewUIRepresentable.swift in Sources */,
 				E267C9472631C1F500520438 /* Route.swift in Sources */,
+				E24B1260263DA7D9002FF0C5 /* LandmarkListView.swift in Sources */,
 				E2AD2203260B42E100332AD5 /* Persistence.swift in Sources */,
 				E25AB0D9263486AC009BDD8A /* Tour.swift in Sources */,
 				E2AD222E260B464E00332AD5 /* LandmarkDetailView.swift in Sources */,
