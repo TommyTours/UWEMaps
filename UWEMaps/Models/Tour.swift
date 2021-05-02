@@ -10,7 +10,7 @@ import MapKit
 
 struct Tour
 {
-    let AllDestinations: [Landmark]
+    var AllDestinations: [Landmark]
     let AllRoutes: [Route]
     var CurrentRouteNumber = 0
     var CurrentInstructionNumber = 0
@@ -22,10 +22,10 @@ struct Tour
     var ArrivalTime: Date
     var TimeToDest: Int
     
-    init()
+    init(_ JSONLoc: String)
     {
-        AllDestinations = Tour.loadLandmarkData()
-        AllRoutes = Tour.loadRouteData()
+        AllDestinations = Tour.loadLandmarkData(JSONLoc)
+        AllRoutes = Tour.loadRouteData(JSONLoc)
         DestinationCount = AllDestinations.count
         CurrentRoute = AllRoutes.first!
         CurrentInstruction = CurrentRoute.Instructions.first!
@@ -78,11 +78,11 @@ struct Tour
         CurrentRoute.Coordinates = MKPolyline(coordinates: CurrentRoute.CoordinateArray, count: CurrentRoute.CoordinateArray.count)
     }
     
-    private static func loadLandmarkData() -> [Landmark]
+    private static func loadLandmarkData(_ JSONLoc: String) -> [Landmark]
     {
         var localLandmarkArr = [Landmark]()
         guard
-            let fileName = Bundle.main.url(forResource: "TourLandmarksV2", withExtension: "geojson"),
+            let fileName = Bundle.main.url(forResource: JSONLoc, withExtension: "geojson"),
             let landmarkData = try? Data(contentsOf: fileName)
         else {
             return []
@@ -116,11 +116,11 @@ struct Tour
         //        return localLandmarkArr
     }
     
-    private static func loadRouteData() -> [Route]
+    private static func loadRouteData(_ JSONLoc: String) -> [Route]
     {
         var routes = [Route]()
         guard
-            let fileName = Bundle.main.url(forResource: "TourLandmarksV2", withExtension: "geojson"),
+            let fileName = Bundle.main.url(forResource: JSONLoc, withExtension: "geojson"),
             let landmarkData = try? Data(contentsOf: fileName)
         else {
             return []

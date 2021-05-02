@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LandmarkListView: DynamicViewContent {
     
-    let data: [Landmark]
+    @Binding var data: [Landmark]
     
     var body: some View
     {
@@ -37,12 +37,13 @@ struct LandmarkListRow: View {
         {
             HStack
             {
-                Text(landmark.Name!)
-                Spacer()
                 Image(landmark.ImageKey ?? "missingImage")
                     .resizable()
-                    .scaledToFit()
-                    .frame(maxWidth: 100, minHeight: 100)
+                    .scaledToFill()
+                    .frame(width: 80, height: 80)
+                    .cornerRadius(12)
+                Text(landmark.Name ?? "Missing Name")
+                Spacer()
             }
         }
     }
@@ -50,7 +51,7 @@ struct LandmarkListRow: View {
 
 struct LandmarkListView_Previews: PreviewProvider {
     static var previews: some View {
-        LandmarkListView(data: Tour().AllDestinations)
+        LandmarkListView(data: .constant(Tour("TourLandmarksV3").AllDestinations))
     }
 }
 

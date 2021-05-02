@@ -95,12 +95,12 @@ extension LocationManager: CLLocationManagerDelegate
         guard let instruction = currentInstruction else { return }
         let distanceFromDest = lastestLoc.distance(from: destination)
         let distanceFromInstruction = lastestLoc.distance(from: instruction)
-        if distanceFromDest <= 3
+        if distanceFromDest <= 10
         {
             atDestination = true
             return
         }
-        else if distanceFromInstruction <= 2
+        else if distanceFromInstruction <= 5
         {
             atInstruction += 1
         }

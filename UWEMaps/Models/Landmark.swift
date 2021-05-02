@@ -15,6 +15,8 @@ struct Landmark
     let Description: String?
     let Coordinate: CLLocationCoordinate2D
     let ImageKey: String?
+    let ImageURL: String?
+    let MoreDetailsURL: String?
     
     init?(feature: MKGeoJSONFeature)
     {
@@ -30,13 +32,17 @@ struct Landmark
         Description = properties["description"] as? String
         Coordinate = point.coordinate
         ImageKey = properties["imagekey"] as? String
+        ImageURL = properties["imageURL"] as? String
+        MoreDetailsURL = properties["moreDetailsURL"] as? String
     }
     
-    init(name: String, description: String, coordinate: CLLocationCoordinate2D, imageKey: String)
+    init(name: String, description: String, coordinate: CLLocationCoordinate2D, imageKey: String?, imageURL: String?, moreDetailsURL: String?)
     {
         Name = name
         Description = description
         Coordinate = coordinate
         ImageKey = imageKey
+        ImageURL = imageURL
+        MoreDetailsURL = moreDetailsURL
     }
 }

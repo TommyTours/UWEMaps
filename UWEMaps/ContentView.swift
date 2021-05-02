@@ -16,7 +16,7 @@ struct ContentView: View {
      animation: .default)
      private var items: FetchedResults<Item>*/
     
-    @State var tourData = Tour()
+    @State var tourData = Tour("TourLandmarksV3")
     
     var body: some View {
         TabView {
@@ -24,15 +24,15 @@ struct ContentView: View {
                 .tabItem {
                     Image(systemName: "map")
                     Text("Tour")
-                }//
-            LandmarkListView(data: tourData.AllDestinations)
+                }
+            LandmarkListView(data: $tourData.AllDestinations)
                 .tabItem {
                     Image(systemName: "building")
                     Text("Landmarks")
                 }
-        }.onAppear {
-            tourData = Tour()
-        }
+        }//.onAppear {
+          //  tourData = Tour("TourLandmarksV3")
+        //}
             /*List {
              ForEach(items) { item in
              Text("Item at \(item.timestamp!, formatter: itemFormatter)")
