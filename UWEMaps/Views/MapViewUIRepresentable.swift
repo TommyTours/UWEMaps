@@ -18,8 +18,9 @@ struct MapViewUIRepresentable: UIViewRepresentable
         mapViewInstance.isRotateEnabled = false
         mapViewInstance.delegate = context.coordinator
         mapViewInstance.showsUserLocation = true
-        mapViewInstance.cameraZoomRange = MKMapView.CameraZoomRange(
-            maxCenterCoordinateDistance: 2000)
+        //At some point setting this camera zoom range broke the whole map and caused just a blank screen to be shown
+        //Removing splash screen fixed, though screen is still blank until location services is enabled.
+        mapViewInstance.cameraZoomRange = MKMapView.CameraZoomRange(maxCenterCoordinateDistance: 2000)
         mapViewInstance.userTrackingMode = .followWithHeading
         return mapViewInstance
     }
