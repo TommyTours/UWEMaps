@@ -16,7 +16,7 @@ struct ContentView: View {
      animation: .default)
      private var items: FetchedResults<Item>*/
     
-    @State var tourData = Tour("TourLandmarksV3")
+    @State var tourData = Tour("TourLandmarksV4")
     //@State var showingSplash = true
     
     var body: some View {

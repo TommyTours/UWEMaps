@@ -1,0 +1,672 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "shape": "Marker",
+        "name": "Parking Machine",
+        "category": "default"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.549701,
+          51.501913
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "shape": "Marker",
+        "name": "Business School",
+        "category": "default",
+        "description": "WHAOADFADS X BLOCK COOL",
+        "imagekey": "BusinessSchool"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.550361,
+          51.500765
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "shape": "Marker",
+        "name": "Student's Union",
+        "category": "default"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.551056,
+          51.500501
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "shape": "Marker",
+        "name": "Centre for music",
+        "category": "default"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.5471,
+          51.497623
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "shape": "Marker",
+        "name": "S Block",
+        "category": "default"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.548182,
+          51.498443
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "shape": "Marker",
+        "name": "Library",
+        "category": "default"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.548521,
+          51.500177
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "shape": "Marker",
+        "name": "Q Block",
+        "category": "default"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.548474,
+          51.500702
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "shape": "Marker",
+        "name": "R Block",
+        "category": "default"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.54938,
+          51.502256
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "shape": "Marker",
+        "name": "Accomodation",
+        "category": "default"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.547838,
+          51.50283
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "shape": "Marker",
+        "name": "Centre for Sport",
+        "category": "default"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.547148,
+          51.503894
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "shape": "Marker",
+        "name": "End",
+        "category": "default"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.549701,
+          51.501913
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "shape": "Line",
+        "name": "ParkingMachineToBusinessSchool",
+        "category": "default"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -2.549701,
+            51.501913
+          ],
+          [
+            -2.549714,
+            51.501487
+          ],
+          [
+            -2.549554,
+            51.500655
+          ],
+          [
+            -2.550285,
+            51.500623
+          ],
+          [
+            -2.550361,
+            51.500765
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "shape": "Line",
+        "name": "From Business Block to SU",
+        "category": "default"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -2.550361,
+            51.500765
+          ],
+          [
+            -2.550628,
+            51.50088
+          ],
+          [
+            -2.550783,
+            51.500819
+          ],
+          [
+            -2.550932,
+            51.500677
+          ],
+          [
+            -2.551056,
+            51.500501
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "shape": "Line",
+        "name": "From SU to CFM",
+        "category": "default"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -2.551056,
+            51.500501
+          ],
+          [
+            -2.549523,
+            51.500436
+          ],
+          [
+            -2.549456,
+            51.500307
+          ],
+          [
+            -2.549316,
+            51.498998
+          ],
+          [
+            -2.549198,
+            51.498633
+          ],
+          [
+            -2.549073,
+            51.498521
+          ],
+          [
+            -2.548778,
+            51.498431
+          ],
+          [
+            -2.548539,
+            51.498396
+          ],
+          [
+            -2.547715,
+            51.498525
+          ],
+          [
+            -2.547612,
+            51.498236
+          ],
+          [
+            -2.547466,
+            51.498075
+          ],
+          [
+            -2.547258,
+            51.49796
+          ],
+          [
+            -2.547167,
+            51.497862
+          ],
+          [
+            -2.5471,
+            51.497623
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "shape": "Line",
+        "name": "CFM to S Block",
+        "category": "default"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -2.5471,
+            51.497623
+          ],
+          [
+            -2.547167,
+            51.497862
+          ],
+          [
+            -2.547258,
+            51.49796
+          ],
+          [
+            -2.547466,
+            51.498075
+          ],
+          [
+            -2.547612,
+            51.498236
+          ],
+          [
+            -2.547715,
+            51.498525
+          ],
+          [
+            -2.548182,
+            51.498443
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "shape": "Line",
+        "name": "SBlockTolibrary",
+        "category": "default"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -2.548182,
+            51.498443
+          ],
+          [
+            -2.548531,
+            51.498401
+          ],
+          [
+            -2.548778,
+            51.498431
+          ],
+          [
+            -2.549073,
+            51.498521
+          ],
+          [
+            -2.549198,
+            51.498633
+          ],
+          [
+            -2.549316,
+            51.498998
+          ],
+          [
+            -2.549446,
+            51.500152
+          ],
+          [
+            -2.549047,
+            51.500204
+          ],
+          [
+            -2.54901,
+            51.500153
+          ],
+          [
+            -2.548958,
+            51.500134
+          ],
+          [
+            -2.548637,
+            51.500163
+          ],
+          [
+            -2.548521,
+            51.500177
+          ],
+          [
+            -2.548521,
+            51.500177
+          ],
+          [
+            -2.548539,
+            51.500258
+          ]
+          ]
+      }
+    },
+           {
+      "type": "Feature",
+      "properties": {
+        "shape": "Line",
+        "name": "Library to Q Block",
+        "category": "default"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          
+          [
+            -2.548539,
+            51.500258
+          ],
+          [
+            -2.548574,
+            51.50029
+          ],
+          [
+            -2.548632,
+            51.500301
+          ],
+          [
+            -2.548717,
+            51.500303
+          ],
+          [
+            -2.548803,
+            51.500317
+          ],
+          [
+            -2.548762,
+            51.500357
+          ],
+          [
+            -2.548792,
+            51.500379
+          ],
+          [
+            -2.548915,
+            51.500622
+          ],
+          [
+            -2.548783,
+            51.500666
+          ],
+          [
+            -2.548474,
+            51.500702
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "shape": "Line",
+        "name": "Q Block to R Block",
+        "category": "default"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -2.548474,
+            51.500702
+          ],
+          [
+            -2.54844,
+            51.500789
+          ],
+          [
+            -2.548866,
+            51.501208
+          ],
+          [
+            -2.548922,
+            51.501438
+          ],
+          [
+            -2.549029,
+            51.501604
+          ],
+          [
+            -2.549069,
+            51.501758
+          ],
+          [
+            -2.549301,
+            51.501921
+          ],
+          [
+            -2.54938,
+            51.502256
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "shape": "Line",
+        "name": "R Block to Accomodation",
+        "category": "default"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -2.54938,
+            51.502256
+          ],
+          [
+            -2.549466,
+            51.502512
+          ],
+          [
+            -2.549556,
+            51.502649
+          ],
+          [
+            -2.548448,
+            51.502772
+          ],
+          [
+            -2.547838,
+            51.50283
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "shape": "Line",
+        "name": "Accomodation to Centre for sport",
+        "category": "default"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          
+          [
+            -2.547838,
+            51.50283
+          ],
+          [
+            -2.546214,
+            51.503001
+          ],
+          [
+            -2.546214,
+            51.503001
+          ],
+          [
+            -2.546256,
+            51.503168
+          ],
+          [
+            -2.546436,
+            51.50359
+          ],
+          [
+            -2.546467,
+            51.503707
+          ],
+          [
+            -2.546481,
+            51.503864
+          ],
+          [
+            -2.546699,
+            51.503898
+          ],
+          [
+            -2.546818,
+            51.503886
+          ],
+          [
+            -2.547148,
+            51.503894
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "shape": "Line",
+        "name": "Centre for sport to end",
+        "category": "default"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -2.547148,
+            51.503894
+          ],
+          [
+            -2.547458,
+            51.503808
+          ],
+          [
+            -2.547928,
+            51.503745
+          ],
+          [
+            -2.548736,
+            51.503781
+          ],
+          [
+            -2.548923,
+            51.503794
+          ],
+          [
+            -2.549037,
+            51.503795
+          ],
+          [
+            -2.549401,
+            51.503822
+          ],
+          [
+            -2.549469,
+            51.503754
+          ],
+          [
+            -2.54998,
+            51.502703
+          ],
+          [
+            -2.550056,
+            51.50267
+          ],
+          [
+            -2.549869,
+            51.502453
+          ],
+          [
+            -2.549828,
+            51.502372
+          ],
+          [
+            -2.54975,
+            51.502068
+          ],
+          [
+            -2.549717,
+            51.501922
+          ]
+        ]
+      }
+    }
+  ]
+}
