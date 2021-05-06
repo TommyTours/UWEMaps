@@ -18,7 +18,7 @@ struct LandmarkListView: DynamicViewContent {
             List
             {
                 ForEach(data, id: \.Name) { landmark in
-                    if landmark.Name != "Parking Machine"
+                    if landmark.Name != "Parking Machine" && landmark.Name != "End of Tour"
                     {
                         LandmarkListRow(landmark: landmark)
                     }
@@ -51,7 +51,7 @@ struct LandmarkListRow: View {
 
 struct LandmarkListView_Previews: PreviewProvider {
     static var previews: some View {
-        LandmarkListView(data: .constant(Tour("TourLandmarksV3").AllDestinations))
+        LandmarkListView(data: .constant(Tour("localTour").AllDestinations))
     }
 }
 

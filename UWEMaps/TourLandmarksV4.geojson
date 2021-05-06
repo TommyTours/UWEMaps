@@ -22,7 +22,7 @@
         "shape": "Marker",
         "name": "Business School",
         "category": "default",
-        "description": "WHAOADFADS X BLOCK COOL",
+        "description": "Opened in 2017 following a £55 million investment, the Bristol Business School building houses diverse range of practical courses and research in areas including Accounting and Finance, Business Management and Law.  The building itself contains a wide range of study spaces and facilities including a Financial Trading room, Mock Courtrooms and an Entrepreneurship space",
         "imagekey": "BusinessSchool"
       },
       "geometry": {
@@ -38,7 +38,10 @@
       "properties": {
         "shape": "Marker",
         "name": "Student's Union",
-        "category": "default"
+        "description": "Completed in 2015, the Students' Union building houses all of the SU services as well as the SU shop and Cafe/Bar with indoor and outdoor seating.",
+        "imagekey": "SUBuilding",
+        "imageURL": "https://www1.uwe.ac.uk/images/student-union-campus-dev.jpg",
+        "moreDetailsURL": "https://www.uwe.ac.uk/life/campus-and-facilities/students-union-building"
       },
       "geometry": {
         "type": "Point",
@@ -53,6 +56,9 @@
       "properties": {
         "shape": "Marker",
         "name": "Centre for music",
+        "description" : "The UWE Centre for Music offers a wide range of ways for students to get involved in music and performing arts, from music lessons to recording facilities to lighting and sound for theatre.",
+        "imagekey" : "centre_for_music",
+        "moreDetailsURL": "https://www.uwe.ac.uk/life/activities/centre-for-music",
         "category": "default"
       },
       "geometry": {
@@ -67,7 +73,9 @@
       "type": "Feature",
       "properties": {
         "shape": "Marker",
-        "name": "S Block",
+        "name": "B Block",
+        "description": "B Block houses the Departments of Arts and Cultural Industries as well as Education and Childhood.  This block also contains the forum workspace with PC's available for student use and the Grill restaurant.",
+        "imagekey" : "b_block",
         "category": "default"
       },
       "geometry": {
@@ -82,7 +90,9 @@
       "type": "Feature",
       "properties": {
         "shape": "Marker",
-        "name": "Library",
+        "name": "D Block",
+        "description": "This entrance leads to D Block, which contains the library which hosts a large selection of books as well a numerous study spaces as well as the Onezone, the main student refectory on campus.",
+        "imagekey": "library",
         "category": "default"
       },
       "geometry": {
@@ -98,6 +108,9 @@
       "properties": {
         "shape": "Marker",
         "name": "Q Block",
+        "description": "Q Block houses the Department of Computer Science and Creative Technology as well as the Hive study space numerous lecture theatres and a Subway",
+        "moreDetailsURL": "https://www.uwe.ac.uk/about/faculties-and-departments/environment-and-technology/computer-science-creative-technologies",
+        "imagekey": "qblock",
         "category": "default"
       },
       "geometry": {
@@ -113,6 +126,9 @@
       "properties": {
         "shape": "Marker",
         "name": "R Block",
+        "description": "R Block, also known as the Achitecture and Built Environment Building is home to an impressive suite of technology including integrated studios for computer-aided-desing (CAD) and architectural modelling resources.",
+        "imagekey": "r_block",
+        "moreDetailsURL" : "https://www.uwe.ac.uk/about/faculties-and-departments/environment-and-technology/architecture-and-built-environment",
         "category": "default"
       },
       "geometry": {
@@ -128,6 +144,9 @@
       "properties": {
         "shape": "Marker",
         "name": "Accomodation",
+        "description": "The student village on the UWE Frenchay campus houses over more than 3,000 students",
+        "imagekey": "accommodation",
+        "moreDetailsURL": "https://www.uwe.ac.uk/life/accommodation",
         "category": "default"
       },
       "geometry": {
@@ -143,6 +162,9 @@
       "properties": {
         "shape": "Marker",
         "name": "Centre for Sport",
+        "description": "This £5.5 million facility caters for all ablities and competitive natures. With multiple indoor courts, a large sports hall, gym, astro turf pitch and climbing wall, theres something for everyone",
+        "imagekey": "centre_for_sport",
+        "moreDetailsURL" : "https://www.uwe.ac.uk/life/activities/sport/sports-facilities",
         "category": "default"
       },
       "geometry": {
@@ -157,8 +179,9 @@
       "type": "Feature",
       "properties": {
         "shape": "Marker",
-        "name": "End",
-        "category": "default"
+        "name": "End of Tour",
+        "description": "Thanks for taking the tour. If there were any areas that particularly interested you, be sure to check out more information available on the UWE website.",
+        "imagekey": "UWE_Logo"
       },
       "geometry": {
         "type": "Point",
