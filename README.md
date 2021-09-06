@@ -15,4 +15,6 @@ The primary function of the app is to provide the tour of the campus with inform
 ### Landmark View
 The second function of the app allows users to view the information about the landmarks independently of the tour by selecting the desired landmark from a list.
 
+## Screenshots
 ![instruction updating resized](https://user-images.githubusercontent.com/29551392/132209870-f41b6c6e-f8c6-4aab-9cf4-102afe2b1bbf.png)
+![display information resized](https://user-images.githubusercontent.com/29551392/132210097-d259bd14-aa83-44ea-9069-1e2d88863eb2.png)
