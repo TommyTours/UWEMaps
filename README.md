@@ -1,6 +1,4 @@
 # UWEMaps
-![instruction updating resized](https://user-images.githubusercontent.com/29551392/132209870-f41b6c6e-f8c6-4aab-9cf4-102afe2b1bbf.png)
-
 
 ## About
 UWEMaps is an iOS app built for my Digital Systems Project/Dissertation for my Computer Science degree at the University of the West of England.
@@ -16,3 +14,5 @@ The app has two main functions
 The primary function of the app is to provide the tour of the campus with information about the landmarks being displayed as a modal sheet when the user arrives at said landmark.
 ### Landmark View
 The second function of the app allows users to view the information about the landmarks independently of the tour by selecting the desired landmark from a list.
+
+![instruction updating resized](https://user-images.githubusercontent.com/29551392/132209870-f41b6c6e-f8c6-4aab-9cf4-102afe2b1bbf.png)
